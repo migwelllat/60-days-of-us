@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>60 Days of Us ❤️</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="book">
+
+        <!-- ==========================================
+             INTRO PAGE
+        =========================================== -->
+        <section id="introPage" class="page intro-page active">
+
+            <div class="page-decoration top-left">♡</div>
+            <div class="page-decoration top-right">✿</div>
+
+            <div class="intro-content">
+
+                <div class="little-label">
+                    a little something for you...
+                </div>
+
+                <h1>
+                    60 Days<br>
+                    <span>of Us</span>
+                </h1>
+
+                <div class="heart-divider">
+                    ─── ♡ ───
+                </div>
+
+                <p class="intro-text">
+                    Let's see how well you remember
+                    our little moments. 👀
+                </p>
+
+                <p class="intro-subtext">
+                    no pressure, babyyy.<br>
+                    this is just for fun ❤️
+                </p>
+
+                <button id="startButton" class="primary-button">
+                    Begin the little quiz
+                    <span>→</span>
+                </button>
+
+            </div>
+
+            <div class="doodle doodle-bottom-left">
+                ♡
+            </div>
+
+            <div class="doodle doodle-bottom-right">
+                ✎
+            </div>
+
+            <div class="page-number">
+                01
+            </div>
+
+        </section>
+
+
+        <!-- ==========================================
+             QUIZ PAGE
+        =========================================== -->
+        <section id="quizPage" class="page quiz-page">
+
+            <div class="notebook-header">
+
+                <div class="header-title">
+                    60 DAYS OF US
+                </div>
+
+                <div id="progressText" class="progress-text">
+                    1 / 12
+                </div>
+
+            </div>
+
+            <div class="question-area">
+
+                <div id="questionNumber" class="question-number">
+                    QUESTION 01
+                </div>
+
+                <h2 id="questionText" class="question-text">
+                    Where did we first meet?
+                </h2>
+
+                <!-- Multiple choice answers -->
+                <div id="answersContainer" class="answers-container">
+                    <!-- JavaScript inserts answers here -->
+                </div>
+
+                <!-- Type answer container for Question 8 -->
+                <div id="textAnswerContainer" class="text-answer-container hidden">
+
+                    <textarea
+                        id="textAnswer"
+                        class="text-answer"
+                        placeholder="type whatever you want... ❤️"
+                        maxlength="500"
+                        rows="4"
+                    ></textarea>
+
+                    <button id="submitTextButton" class="primary-button">
+                        Submit
+                        <span>→</span>
+                    </button>
+
+                </div>
+
+                <!-- Feedback -->
+                <div id="feedback" class="feedback hidden">
+
+                    <div id="feedbackEmoji" class="feedback-emoji">
+                        ❤️
+                    </div>
+
+                    <div id="feedbackMessage" class="feedback-message">
+                        Yayyy!
+                    </div>
+
+                </div>
+
+                <!-- Next button -->
+                <button id="nextButton" class="next-button hidden">
+                    Next page
+                    <span>→</span>
+                </button>
+
+            </div>
+
+            <div class="quiz-doodles">
+                <span>♡</span>
+                <span>✿</span>
+                <span>♡</span>
+            </div>
+
+            <div id="quizPageNumber" class="page-number">
+                02
+            </div>
+
+        </section>
+
+
+        <!-- ==========================================
+             FINAL PAGE
+        =========================================== -->
+        <section id="finalPage" class="page final-page">
+
+            <div class="final-decoration decoration-one">
+                ♡
+            </div>
+
+            <div class="final-decoration decoration-two">
+                ✿
+            </div>
+
+            <div class="final-content">
+
+                <div class="final-small-text">
+                    YOU MADE ITTT
+                </div>
+
+                <div class="final-emoji">
+                    🥹❤️
+                </div>
+
+                <h1>
+                    60 DAYS<br>
+                    <span>OF US</span>
+                </h1>
+
+                <div class="heart-divider">
+                    ─── ♡ ───
+                </div>
+
+                <p class="final-message">
+                    And now...
+                </p>
+
+                <p class="final-message">
+                    there's one last thing<br>
+                    I want you to hear. ❤️
+                </p>
+
+                <div class="voice-note">
+
+                    <div class="voice-icon">
+                        🎙️
+                    </div>
+
+                    <div class="voice-info">
+
+                        <div class="voice-title">
+                            A little message for you
+                        </div>
+
+                        <div class="voice-subtitle">
+                            from me ❤️
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <button id="playVoiceButton" class="primary-button voice-button">
+                    <span id="playIcon">▶</span>
+                    <span id="playText">PLAY MY MESSAGE</span>
+                </button>
+                
+                <audio id="backgroundMusic" preload="auto" loop>
+                    <source src="assets/romantic-music.mp3" type="audio/mpeg">
+                </audio>
+
+                <audio id="voiceMessage" preload="auto">
+                    <source src="assets/voice-message.mp3" type="audio/mpeg">
+                    Your browser does not support audio.
+                </audio>
+
+                <p class="final-bottom-text">
+                    thank you for these 60 days. ❤️
+                </p>
+
+            </div>
+
+            <div class="page-number">
+                13
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

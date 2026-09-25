@@ -1,0 +1,1212 @@
+/* =========================================================
+   60 DAYS OF US
+   Handwritten Notebook Theme
+   ========================================================= */
+
+/* -------------------------
+   RESET
+------------------------- */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255, 255, 255, 0.6),
+            transparent 30%
+        ),
+        #d8cfc5;
+
+    color: #403936;
+
+    font-family: "Patrick Hand", cursive;
+
+    overflow-x: hidden;
+}
+
+
+/* -------------------------
+   MAIN BOOK
+------------------------- */
+
+.book {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 18px;
+}
+
+
+/* -------------------------
+   NOTEBOOK PAGE
+------------------------- */
+
+.page {
+    position: relative;
+
+    width: 100%;
+    max-width: 520px;
+    min-height: calc(100vh - 36px);
+
+    overflow: hidden;
+
+    background-color: #fffdf5;
+
+    /*
+       Notebook lines
+    */
+    background-image:
+        linear-gradient(
+            transparent 31px,
+            rgba(105, 145, 180, 0.17) 32px
+        );
+
+    background-size: 100% 32px;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 14px 35px rgba(60, 48, 40, 0.20),
+        0 3px 8px rgba(60, 48, 40, 0.12);
+
+    display: none;
+
+    animation: pageAppear 0.5s ease;
+}
+
+
+/*
+   Left red notebook margin
+*/
+
+.page::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+    left: 48px;
+
+    width: 1.5px;
+
+    background: rgba(218, 91, 105, 0.35);
+
+    pointer-events: none;
+}
+
+
+/* -------------------------
+   PAGE TRANSITION
+------------------------- */
+
+.page.active {
+    display: block;
+}
+
+.page.fade-out {
+    animation: pageDisappear 0.25s ease forwards;
+}
+
+.page.fade-in {
+    animation: pageAppear 0.4s ease forwards;
+}
+
+@keyframes pageAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(12px) scale(0.985);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+@keyframes pageDisappear {
+
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+}
+
+
+/* -------------------------
+   PAGE NUMBER
+------------------------- */
+
+.page-number {
+    position: absolute;
+
+    bottom: 15px;
+    right: 20px;
+
+    font-family: "Caveat", cursive;
+
+    font-size: 18px;
+
+    color: rgba(75, 67, 62, 0.55);
+
+    transform: rotate(-4deg);
+}
+
+
+/* =========================================================
+   INTRO PAGE
+   ========================================================= */
+
+.intro-page {
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.intro-page.active {
+    display: flex;
+}
+
+
+/* -------------------------
+   INTRO CONTENT
+------------------------- */
+
+.intro-content {
+    position: relative;
+
+    width: calc(100% - 90px);
+
+    margin-left: 28px;
+
+    padding: 60px 10px 70px;
+}
+
+
+/* -------------------------
+   LITTLE LABEL
+------------------------- */
+
+.little-label {
+    font-family: "Caveat", cursive;
+
+    font-size: 21px;
+
+    color: #a66d72;
+
+    transform: rotate(-2deg);
+
+    margin-bottom: 15px;
+}
+
+
+/* -------------------------
+   INTRO TITLE
+------------------------- */
+
+.intro-content h1 {
+    font-family: "Caveat", cursive;
+
+    font-size: clamp(58px, 17vw, 88px);
+
+    line-height: 0.8;
+
+    font-weight: 700;
+
+    color: #413a37;
+
+    transform: rotate(-2deg);
+}
+
+.intro-content h1 span {
+    color: #b85f6d;
+}
+
+
+/* -------------------------
+   HEART DIVIDER
+------------------------- */
+
+.heart-divider {
+    margin: 28px 0;
+
+    font-family: "Caveat", cursive;
+
+    font-size: 25px;
+
+    color: #b85f6d;
+
+    letter-spacing: 3px;
+}
+
+
+/* -------------------------
+   INTRO TEXT
+------------------------- */
+
+.intro-text {
+    font-family: "Patrick Hand", cursive;
+
+    font-size: 22px;
+
+    line-height: 1.25;
+
+    max-width: 300px;
+
+    margin: 0 auto 14px;
+}
+
+.intro-subtext {
+    font-family: "Caveat", cursive;
+
+    font-size: 22px;
+
+    line-height: 1.15;
+
+    color: #746966;
+
+    margin-bottom: 32px;
+}
+
+
+/* -------------------------
+   PRIMARY BUTTON
+------------------------- */
+
+.primary-button {
+    border: none;
+
+    background: #b85f6d;
+
+    color: white;
+
+    font-family: "Patrick Hand", cursive;
+
+    font-size: 20px;
+
+    padding: 13px 24px;
+
+    min-height: 54px;
+
+    border-radius: 13px;
+
+    box-shadow:
+        0 4px 0 #914955,
+        0 7px 12px rgba(75, 45, 45, 0.15);
+
+    cursor: pointer;
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease,
+        background 0.15s ease;
+}
+
+.primary-button span {
+    display: inline-block;
+
+    margin-left: 8px;
+
+    transition: transform 0.2s ease;
+}
+
+.primary-button:active {
+    transform: translateY(3px);
+
+    box-shadow:
+        0 1px 0 #914955,
+        0 3px 7px rgba(75, 45, 45, 0.15);
+}
+
+.primary-button:active span {
+    transform: translateX(4px);
+}
+
+
+/* -------------------------
+   DOODLES
+------------------------- */
+
+.page-decoration,
+.doodle {
+    position: absolute;
+
+    font-family: "Caveat", cursive;
+
+    color: rgba(184, 95, 109, 0.55);
+
+    pointer-events: none;
+}
+
+.page-decoration {
+    font-size: 34px;
+}
+
+.top-left {
+    top: 25px;
+    left: 65px;
+
+    transform: rotate(-15deg);
+}
+
+.top-right {
+    top: 32px;
+    right: 35px;
+
+    font-size: 30px;
+
+    transform: rotate(12deg);
+}
+
+.doodle-bottom-left {
+    bottom: 55px;
+    left: 75px;
+
+    font-size: 34px;
+
+    transform: rotate(20deg);
+}
+
+.doodle-bottom-right {
+    bottom: 50px;
+    right: 50px;
+
+    font-size: 28px;
+
+    transform: rotate(-15deg);
+}
+
+
+/* =========================================================
+   QUIZ PAGE
+   ========================================================= */
+
+.quiz-page {
+    padding-bottom: 65px;
+}
+
+
+/* -------------------------
+   NOTEBOOK HEADER
+------------------------- */
+
+.notebook-header {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    min-height: 62px;
+
+    padding:
+        18px
+        22px
+        10px
+        66px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    border-bottom:
+        1px solid
+        rgba(70, 65, 60, 0.10);
+}
+
+.header-title {
+    font-family: "Caveat", cursive;
+
+    font-size: 20px;
+
+    color: #a15a64;
+
+    transform: rotate(-1deg);
+}
+
+.progress-text {
+    font-family: "Caveat", cursive;
+
+    font-size: 18px;
+
+    color: rgba(65, 58, 55, 0.55);
+}
+
+
+/* -------------------------
+   QUESTION AREA
+------------------------- */
+
+.question-area {
+    position: relative;
+
+    z-index: 1;
+
+    padding:
+        28px
+        26px
+        30px
+        70px;
+}
+
+
+/* -------------------------
+   QUESTION NUMBER
+------------------------- */
+
+.question-number {
+    display: inline-block;
+
+    font-family: "Caveat", cursive;
+
+    font-size: 21px;
+
+    color: #b85f6d;
+
+    margin-bottom: 10px;
+
+    transform: rotate(-2deg);
+}
+
+
+/* -------------------------
+   QUESTION TEXT
+------------------------- */
+
+.question-text {
+    font-family: "Caveat", cursive;
+
+    font-size: clamp(31px, 8vw, 42px);
+
+    line-height: 1.02;
+
+    font-weight: 700;
+
+    color: #403936;
+
+    margin-bottom: 26px;
+
+    transform: rotate(-1deg);
+}
+
+
+/* =========================================================
+   ANSWERS
+   ========================================================= */
+
+.answers-container {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 13px;
+}
+
+
+/* -------------------------
+   ANSWER BUTTON
+------------------------- */
+
+.answer-button {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 58px;
+
+    padding:
+        12px
+        14px
+        12px
+        18px;
+
+    border:
+        1.5px solid
+        rgba(93, 82, 76, 0.20);
+
+    border-radius: 12px;
+
+    background:
+        rgba(255, 255, 255, 0.52);
+
+    color: #48403c;
+
+    font-family: "Patrick Hand", cursive;
+
+    font-size: 21px;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 2px 0 rgba(100, 85, 77, 0.06);
+
+    transition:
+        transform 0.15s ease,
+        background 0.15s ease,
+        border-color 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+
+/*
+   Tiny handwritten letter
+*/
+
+.answer-letter {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 29px;
+    height: 29px;
+
+    margin-right: 8px;
+
+    border-radius: 50%;
+
+    background: rgba(184, 95, 109, 0.10);
+
+    color: #a65a64;
+
+    font-family: "Caveat", cursive;
+
+    font-size: 19px;
+
+    vertical-align: middle;
+}
+
+
+.answer-button:hover {
+    background: rgba(255, 255, 255, 0.82);
+
+    border-color: rgba(184, 95, 109, 0.30);
+
+    transform: translateY(-1px);
+}
+
+.answer-button:active {
+    transform: scale(0.985);
+}
+
+
+/* -------------------------
+   WRONG ANSWER
+------------------------- */
+
+.answer-button.wrong {
+    animation: wrongShake 0.35s ease;
+
+    border-color: rgba(190, 75, 88, 0.45);
+
+    background: rgba(255, 225, 228, 0.55);
+}
+
+@keyframes wrongShake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-7px);
+    }
+
+    50% {
+        transform: translateX(7px);
+    }
+
+    75% {
+        transform: translateX(-4px);
+    }
+
+}
+
+
+/* -------------------------
+   CORRECT ANSWER
+------------------------- */
+
+.answer-button.correct {
+    border-color: rgba(95, 154, 105, 0.55);
+
+    background: rgba(224, 246, 226, 0.75);
+
+    transform: scale(1.01);
+}
+
+
+/* -------------------------
+   DISABLED ANSWERS
+------------------------- */
+
+.answer-button.disabled {
+    pointer-events: none;
+
+    opacity: 0.65;
+}
+
+
+/* =========================================================
+   TEXT ANSWER — QUESTION 8
+   ========================================================= */
+
+.text-answer-container {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+.text-answer-container.hidden {
+    display: none;
+}
+
+.text-answer {
+    width: 100%;
+
+    min-height: 145px;
+
+    resize: none;
+
+    padding: 16px;
+
+    border:
+        1.5px solid
+        rgba(93, 82, 76, 0.22);
+
+    border-radius: 12px;
+
+    background:
+        rgba(255, 255, 255, 0.60);
+
+    color: #403936;
+
+    font-family: "Patrick Hand", cursive;
+
+    font-size: 21px;
+
+    line-height: 1.35;
+
+    outline: none;
+
+    box-shadow:
+        inset 0 2px 5px rgba(60, 48, 40, 0.04);
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.text-answer::placeholder {
+    color: rgba(72, 64, 60, 0.40);
+}
+
+.text-answer:focus {
+    border-color: rgba(184, 95, 109, 0.55);
+
+    box-shadow:
+        0 0 0 3px rgba(184, 95, 109, 0.08);
+}
+
+
+/* =========================================================
+   FEEDBACK
+   ========================================================= */
+
+.feedback {
+    margin-top: 20px;
+
+    padding:
+        14px
+        16px;
+
+    border-radius: 12px;
+
+    background:
+        rgba(255, 248, 241, 0.85);
+
+    border:
+        1px dashed
+        rgba(184, 95, 109, 0.35);
+
+    text-align: center;
+
+    animation: feedbackAppear 0.3s ease;
+}
+
+.feedback.hidden {
+    display: none;
+}
+
+@keyframes feedbackAppear {
+
+    from {
+        opacity: 0;
+        transform: scale(0.96) translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+
+}
+
+.feedback-emoji {
+    font-size: 28px;
+
+    margin-bottom: 3px;
+}
+
+.feedback-message {
+    font-family: "Caveat", cursive;
+
+    font-size: 23px;
+
+    line-height: 1.15;
+
+    color: #625651;
+}
+
+
+/* =========================================================
+   NEXT BUTTON
+   ========================================================= */
+
+.next-button {
+    width: 100%;
+
+    min-height: 55px;
+
+    margin-top: 16px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #403936;
+
+    color: #fffdf5;
+
+    font-family: "Patrick Hand", cursive;
+
+    font-size: 21px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 4px 0 #272321,
+        0 6px 10px rgba(45, 37, 33, 0.12);
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+.next-button span {
+    display: inline-block;
+
+    margin-left: 7px;
+
+    transition: transform 0.2s ease;
+}
+
+.next-button:active {
+    transform: translateY(3px);
+
+    box-shadow:
+        0 1px 0 #272321;
+}
+
+.next-button:active span {
+    transform: translateX(4px);
+}
+
+.next-button.hidden {
+    display: none;
+}
+
+
+/* =========================================================
+   QUIZ DOODLES
+   ========================================================= */
+
+.quiz-doodles {
+    position: absolute;
+
+    bottom: 23px;
+    left: 68px;
+
+    display: flex;
+
+    gap: 16px;
+
+    color: rgba(184, 95, 109, 0.45);
+
+    font-family: "Caveat", cursive;
+
+    font-size: 24px;
+
+    transform: rotate(-5deg);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   FINAL PAGE
+   ========================================================= */
+
+.final-page {
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.final-page.active {
+    display: flex;
+}
+
+
+/* -------------------------
+   FINAL CONTENT
+------------------------- */
+
+.final-content {
+    width: calc(100% - 90px);
+
+    margin-left: 28px;
+
+    padding: 45px 5px 65px;
+}
+
+
+/* -------------------------
+   FINAL TITLE
+------------------------- */
+
+.final-small-text {
+    font-family: "Caveat", cursive;
+
+    font-size: 25px;
+
+    color: #a65a64;
+
+    transform: rotate(-2deg);
+}
+
+.final-emoji {
+    font-size: 38px;
+
+    margin: 3px 0 8px;
+}
+
+.final-content h1 {
+    font-family: "Caveat", cursive;
+
+    font-size: clamp(48px, 14vw, 72px);
+
+    line-height: 0.83;
+
+    font-weight: 700;
+
+    color: #403936;
+
+    transform: rotate(-2deg);
+}
+
+.final-content h1 span {
+    color: #b85f6d;
+}
+
+
+/* -------------------------
+   FINAL MESSAGE
+------------------------- */
+
+.final-message {
+    font-family: "Patrick Hand", cursive;
+
+    font-size: 22px;
+
+    line-height: 1.2;
+
+    margin-bottom: 9px;
+}
+
+
+/* =========================================================
+   VOICE NOTE CARD
+   ========================================================= */
+
+.voice-note {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    margin: 22px auto 13px;
+
+    padding: 14px 15px;
+
+    max-width: 330px;
+
+    text-align: left;
+
+    background:
+        rgba(255, 255, 255, 0.55);
+
+    border:
+        1px solid
+        rgba(93, 82, 76, 0.15);
+
+    border-radius: 13px;
+
+    box-shadow:
+        0 3px 8px rgba(70, 55, 45, 0.06);
+}
+
+.voice-icon {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(184, 95, 109, 0.12);
+
+    font-size: 23px;
+}
+
+.voice-info {
+    flex: 1;
+}
+
+.voice-title {
+    font-family: "Patrick Hand", cursive;
+
+    font-size: 19px;
+}
+
+.voice-subtitle {
+    font-family: "Caveat", cursive;
+
+    font-size: 17px;
+
+    color: #9a7778;
+}
+
+
+/* -------------------------
+   VOICE BUTTON
+------------------------- */
+
+.voice-button {
+    width: 100%;
+
+    max-width: 330px;
+}
+
+
+/* -------------------------
+   FINAL BOTTOM
+------------------------- */
+
+.final-bottom-text {
+    font-family: "Caveat", cursive;
+
+    font-size: 19px;
+
+    color: #8a7771;
+
+    margin-top: 23px;
+
+    transform: rotate(-1deg);
+}
+
+
+/* -------------------------
+   FINAL DECORATIONS
+------------------------- */
+
+.final-decoration {
+    position: absolute;
+
+    color: rgba(184, 95, 109, 0.48);
+
+    font-family: "Caveat", cursive;
+
+    pointer-events: none;
+}
+
+.decoration-one {
+    top: 65px;
+    left: 68px;
+
+    font-size: 37px;
+
+    transform: rotate(-15deg);
+}
+
+.decoration-two {
+    top: 105px;
+    right: 38px;
+
+    font-size: 32px;
+
+    transform: rotate(14deg);
+}
+
+
+/* =========================================================
+   RESPONSIVE — SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .book {
+        padding: 10px;
+    }
+
+    .page {
+        min-height: calc(100vh - 20px);
+
+        border-radius: 12px;
+    }
+
+    .page::before {
+        left: 38px;
+    }
+
+    .intro-content,
+    .final-content {
+        width: calc(100% - 68px);
+
+        margin-left: 22px;
+    }
+
+    .intro-content {
+        padding-top: 45px;
+    }
+
+    .intro-content h1 {
+        font-size: 57px;
+    }
+
+    .question-area {
+        padding-left: 58px;
+        padding-right: 18px;
+    }
+
+    .notebook-header {
+        padding-left: 54px;
+        padding-right: 17px;
+    }
+
+    .question-text {
+        font-size: 30px;
+    }
+
+    .answer-button {
+        font-size: 19px;
+        min-height: 54px;
+    }
+
+    .answer-letter {
+        width: 27px;
+        height: 27px;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — TALL PHONES
+   ========================================================= */
+
+@media (min-height: 800px) and (max-width: 600px) {
+
+    .intro-content {
+        padding-top: 75px;
+        padding-bottom: 90px;
+    }
+
+    .question-area {
+        padding-top: 42px;
+    }
+
+    .final-content {
+        padding-top: 75px;
+        padding-bottom: 85px;
+    }
+
+}
+
+
+/* =========================================================
+   DESKTOP
+   ========================================================= */
+
+@media (min-width: 700px) {
+
+    body {
+        padding: 20px;
+    }
+
+    .book {
+        min-height: calc(100vh - 40px);
+    }
+
+    .page {
+        min-height: 720px;
+        max-height: calc(100vh - 40px);
+    }
+
+    .intro-content h1 {
+        font-size: 86px;
+    }
+
+}
